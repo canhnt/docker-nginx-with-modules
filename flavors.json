@@ -15,7 +15,8 @@
         "https://github.com/yaoweibin/ngx_http_substitutions_filter_module.git:pr-19",
         "https://github.com/openresty/lua-ssl-nginx-module.git:pr-11",
         "https://github.com/SpiderLabs/ModSecurity-nginx.git:v1.0.0",
-        "https://github.com/arut/nginx-dav-ext-module:v3.0.0"
+        "https://github.com/arut/nginx-dav-ext-module:v3.0.0",
+        "https://github.com/kaltura/nginx-aws-auth-module.git:1.0.1"
       ],
       "lua_modules": [
         "tsuru-rpaasv2 INOTIFY_INCDIR=/usr/include/x86_64-linux-gnu"
@@ -26,6 +27,12 @@
       "modules": [
         "https://github.com/openresty/echo-nginx-module.git"
       ]
-    }
+    },
+    {
+      "name": "aws-auth",
+      "modules": [
+        "https://github.com/kaltura/nginx-aws-auth-module.git:1.0.1"
+      ]
+    }    
   ]
 }

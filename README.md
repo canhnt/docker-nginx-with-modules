@@ -28,3 +28,12 @@ make image flavor=tsuru nginx_version=1.16.1
 ```
 
 To build a flavor, `jq` is required, cf. [download section of jq](https://stedolan.github.io/jq/download/)
+
+## Forked to support aws-auth
+
+The flavor `aws-auth` include module https://github.com/kaltura/nginx-aws-auth-module 
+
+Build syntax:
+```
+make flavor=ws-auth image
+```

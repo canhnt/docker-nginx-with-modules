@@ -8,7 +8,7 @@ all:
 image:
 	modules=$$(jq -er '.flavors[] | select(.name == "$(flavor)") | .modules | join(",")' flavors.json) && \
 	lua_modules=$$(jq -er '.flavors[] | select(.name == "$(flavor)") | [ .lua_modules[]? ] | join(",")' flavors.json) && \
-	docker build -t tsuru/nginx-$(flavor):$(nginx_version) $$(if [ "$(cached_layers)" = "false" ]; then echo "--no-cache"; fi) --build-arg nginx_version=$(nginx_version) --build-arg modules="$$modules" --build-arg lua_modules="$$lua_modules" .
+	docker build -t canhnt/nginx-$(flavor):$(nginx_version) $$(if [ "$(cached_layers)" = "false" ]; then echo "--no-cache"; fi) --build-arg nginx_version=$(nginx_version) --build-arg modules="$$modules" --build-arg lua_modules="$$lua_modules" .
 
 test: image
 	@docker rm -f test-tsuru-nginx-$(flavor)-$(nginx_version) || true
@@ -28,5 +28,6 @@ test: image
 		exit 1; \
 	fi
 	@docker rm -f test-tsuru-nginx-$(flavor)-$(nginx_version) || true; \
+
 
 .PHONY: all flavor test

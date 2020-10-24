@@ -35,5 +35,5 @@ The flavor `aws-auth` include module https://github.com/kaltura/nginx-aws-auth-m
 
 Build syntax:
 ```
-make flavor=ws-auth image
+make flavor=aws-auth image
 ```
